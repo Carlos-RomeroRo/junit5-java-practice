@@ -3,6 +3,8 @@ package test;
 import main.BasicMethods;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*; // importar todos los métodos de prueba que trae la clase Asertions
 
 public class BasicMethodsTest {
@@ -56,5 +58,38 @@ public class BasicMethodsTest {
         assertFalse(BasicMethods.palindormo("anita lavaba la tina"));
         assertFalse(BasicMethods.palindormo("yo iba a hacer yoga hoy"));
     }
+
+
+    // Test #3 -> sumaNumeros
+    @Test
+    void shouldReturnTrueWhenSumIsCorrect(){
+        assertEquals(BasicMethods.sumaNumeros(123),6);
+        assertEquals(BasicMethods.sumaNumeros(678),21);
+    }
+    // Control de la excepción
+    @Test
+    void shouldThrowExceptionWhenNumberIsNegative() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            BasicMethods.sumaNumeros(-123);
+        });
+    }
+    // Revisión de cuando debería de fallar el método
+    @Test
+    void shouldFailWhenSumIsIncorrect(){
+        assertNotEquals(BasicMethods.sumaNumeros(123),22); // 6 != 22
+        assertNotEquals(BasicMethods.sumaNumeros(678),1); // 21 != 1
+    }
+
+    // Test #4 -> ConteoReps
+    @Test
+    void shouldReturnTrueWhenRepCountIsCorrect(){
+        assertEquals(BasicMethods.conteoRepsEnLista(List.of(1,2,3,4,5,5,5),5),3);
+    }
+    @Test
+    void shouldReturnFalseWhenRepCountIsCorrect(){
+        assertNotEquals(BasicMethods.conteoRepsEnLista(List.of(1,2,3,4,5,5,5),5),6);
+    }
+
+
 
 }

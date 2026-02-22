@@ -37,6 +37,9 @@ public class BasicMethods {
     }
     public static int sumaNumeros(int n){ // solamente usando operaciones matemamticas
         int aux = n, acumulador = 0;
+        if (n < 0) {
+            throw new IllegalArgumentException("El número no puede ser negativo");
+        }
         while(aux > 0){
             acumulador += aux % 10;
             aux/=10;
