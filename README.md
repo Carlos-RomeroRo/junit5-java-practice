@@ -1,4 +1,4 @@
-# JUnit 5 - Java Practice (TDD)
+# JUnit 5 - Java 21 Practice (TDD)
 
 Proyecto educativo desarrollado en **Java 21** para practicar pruebas unitarias utilizando **JUnit 5** bajo el enfoque de **TDD (Test-Driven Development)**.
 
